@@ -11,6 +11,14 @@ public class Teste {
 		
 		CidadaoDAOImple cadastros = new CidadaoDAOImple();
 		cadastros.create(cid1);
+		
+		Cidadao cid2 = new Cidadao();
+		cid2.setNome("Daniel da Silva Santos");
+		cid2.setCpf(02150164311);
+		cid2.setIdade(28);
+		
+		cadastros.create(cid2);
+		
 
 	}
 

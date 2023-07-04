@@ -12,4 +12,5 @@ public interface CidadaoDAO extends Repository {
 	public void update(Cidadao cidadao);
 	public void delete(Cidadao cidadao);
 	public boolean findById(String nome);
+	public boolean findByCPF(String cpf);
 }
