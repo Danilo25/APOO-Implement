@@ -1,6 +1,9 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class CidadaoDAO {
 	
@@ -10,8 +13,23 @@ public class CidadaoDAO {
 	
 	private CidadaoDAO() {
 		Cidadaos = new ArrayList<Cidadao>();
+		File bancoDadosCidadao = new File("C:/Users/*****/eclipse-workspace/Natal_Participa/src/BDCidadao.txt");
+		String input = "";
+		String[] auth;
+		try {
+			Scanner scanner = new Scanner(bancoDadosCidadao);
+			while(scanner.hasNextLine()) {
+				input = scanner.nextLine();
+				auth = input.split(";");
+				Cidadao c = new Cidadao(auth[0], auth[1], Integer.parseInt(auth[2]), auth[3]);
+				create(c);
+			}
+				scanner.close();
+		} catch(FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
-	
+		
 	public static CidadaoDAO getInstance() {
 		if(cDao == null) {
 			cDao = new CidadaoDAO();
