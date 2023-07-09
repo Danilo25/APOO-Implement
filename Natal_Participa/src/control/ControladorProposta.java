@@ -14,9 +14,9 @@ import view.FormularioProposta;
 import view.FormularioDenuncia;
 
 public class ControladorProposta {
-	private PropostaDAO pDao;
-	private PropostaVotadaDAO pvDao;
-	private DenunciaPropostaDAO dpDao;
+	private static PropostaDAO pDao;
+	private static PropostaVotadaDAO pvDao;
+	private static DenunciaPropostaDAO dpDao;
 	
 	private static ControladorProposta cP;
 	
@@ -24,6 +24,7 @@ public class ControladorProposta {
 		pDao = PropostaDAO.getInstance();
 		pvDao = PropostaVotadaDAO.getInstance();
 		dpDao = DenunciaPropostaDAO.getInstance();
+		System.out.println("CP instanciado!");
 	}
 	
 	public static ControladorProposta getInstance() {
@@ -33,7 +34,7 @@ public class ControladorProposta {
 		return cP;
 	}
 	
-	public boolean CadastrarProposta(Scanner scanner) {
+	public boolean CadastrarProposta(Scanner scanner, Cidadao usuarioAuth) {
 		FormularioProposta fp = new FormularioProposta();
 		System.out.print("Título: ");
 		fp.setTitulo(scanner.nextLine());
@@ -51,7 +52,7 @@ public class ControladorProposta {
 				return false;
 			}
 		}
-		Proposta newProposta = new Proposta(fp.getTitulo(), fp.getDescricao(), fp.getLocaisAtingidos(), fp.getCategoria(), fp.getPublicoAlvo(), null, null, null);
+		Proposta newProposta = new Proposta(fp.getTitulo(), fp.getDescricao(), fp.getLocaisAtingidos(), fp.getCategoria(), fp.getPublicoAlvo(), "A definir", usuarioAuth, "ativo");
 		pDao.create(newProposta);
 		System.out.println("Proposta enviada com sucesso!");
 		return true;
@@ -76,9 +77,10 @@ public class ControladorProposta {
 	}
 	
 	public boolean acompanharProposta(Cidadao c, String id) {
-		for(Proposta p : c.getPropostasAcompanhadas()) {
-			if(p.getTitulo().equalsIgnoreCase(id)) {
-				return false;
+		if(c.getPropostasAcompanhadas() != null) {
+			for(Proposta p : c.getPropostasAcompanhadas()) {
+				if(p.getTitulo().equalsIgnoreCase(id))
+					return false;
 			}
 		}
 		c.getPropostasAcompanhadas().add(getProposta(id));
