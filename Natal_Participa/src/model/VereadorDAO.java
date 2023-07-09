@@ -16,7 +16,7 @@ public class VereadorDAO {
 	
 	private VereadorDAO() {
 		Vereadores = new ArrayList<Vereador>();
-		File bancoDadosVereador = new File("C:/Users/carlu/eclipse-workspace/Natal_Participa/src/BDVereador.txt");
+		File bancoDadosVereador = new File("C:/Users/*****/eclipse-workspace/Natal_Participa/src/BDVereador.txt");
 		String input = "";
 		String[] auth;
 		try {
@@ -46,7 +46,7 @@ public class VereadorDAO {
 			String input = null;
 			StringBuffer sb = new StringBuffer();
 			try {
-				Scanner scanner = new Scanner(new File("C:/Users/carlu/eclipse-workspace/Natal_Participa/src/BDVereador.txt"));
+				Scanner scanner = new Scanner(new File("C:/Users/*****/eclipse-workspace/Natal_Participa/src/BDVereador.txt"));
 				while(scanner.hasNextLine()) {
 					input = scanner.nextLine();
 					sb.append(input + "\r\n");
@@ -58,7 +58,7 @@ public class VereadorDAO {
 			}
 			String addVereador = sb.toString();
 			try {
-				FileWriter BDV = new FileWriter("C:/Users/carlu/eclipse-workspace/Natal_Participa/src/BDVereador.txt");
+				FileWriter BDV = new FileWriter("C:/Users/*****/eclipse-workspace/Natal_Participa/src/BDVereador.txt");
 				BDV.append(addVereador);
 				BDV.flush();
 				BDV.close();
