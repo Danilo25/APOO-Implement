@@ -16,7 +16,7 @@ public class Cidadao {
 		this.cpf = cpf;
 		this.idade = idade;
 		this.senha = senha;
-		this.propostasAcompanhadas = null;
+		this.propostasAcompanhadas = new ArrayList<Proposta>();
 	}
 
 	public String getNome() {

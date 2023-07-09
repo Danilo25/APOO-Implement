@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Date;
-
 public class Proposta {
 
 	private String titulo;
@@ -9,11 +7,11 @@ public class Proposta {
 	private String locaisAtingidos;
 	private String categoria;
 	private String publicoAlvo;
-	private Date validade;
+	private String validade;
 	private Cidadao cidadao;
 	private String status;
 	public Proposta(String titulo, String descricao, String locaisAtingidos, String categoria, String publicoAlvo,
-			Date validade, Cidadao cidadao, String status) {
+			String validade, Cidadao cidadao, String status) {
 		this.titulo = titulo;
 		this.descricao = descricao;
 		this.locaisAtingidos = locaisAtingidos;
@@ -55,10 +53,10 @@ public class Proposta {
 	public void setPublicoAlvo(String publicoAlvo) {
 		this.publicoAlvo = publicoAlvo;
 	}
-	public Date getValidade() {
+	public String getValidade() {
 		return validade;
 	}
-	public void setValidade(Date validade) {
+	public void setValidade(String validade) {
 		this.validade = validade;
 	}
 	public Cidadao getCidadao() {
