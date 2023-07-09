@@ -18,7 +18,7 @@ public class ProjetoDAO {
 	
 	private ProjetoDAO() {
 		Projetos = new ArrayList<Projeto>();
-		File bancoDadosProjeto = new File("C:/Users/carlu/eclipse-workspace/Natal_Participa/src/BDProjeto.txt");
+		File bancoDadosProjeto = new File("C:/Users/*****/eclipse-workspace/Natal_Participa/src/BDProjeto.txt");
 		String input = "";
 		String[] auth;
 		try {
@@ -63,7 +63,7 @@ public class ProjetoDAO {
 			String input = null;
 			StringBuffer sb = new StringBuffer();
 			try {
-				Scanner scanner = new Scanner(new File("C:/Users/carlu/eclipse-workspace/Natal_Participa/src/BDProjeto.txt"));
+				Scanner scanner = new Scanner(new File("C:/Users/*****/eclipse-workspace/Natal_Participa/src/BDProjeto.txt"));
 				while(scanner.hasNextLine()) {
 					input = scanner.nextLine();
 					sb.append(input + "\r\n");
@@ -75,7 +75,7 @@ public class ProjetoDAO {
 			}
 			String addProjeto = sb.toString();
 			try {
-				FileWriter BDP = new FileWriter("C:/Users/carlu/eclipse-workspace/Natal_Participa/src/BDProjeto.txt");
+				FileWriter BDP = new FileWriter("C:/Users/*****/eclipse-workspace/Natal_Participa/src/BDProjeto.txt");
 				BDP.append(addProjeto);
 				BDP.flush();
 				BDP.close();
@@ -91,7 +91,7 @@ public class ProjetoDAO {
 		String input = null;
 		StringBuffer sb = new StringBuffer();
 		try {
-			Scanner scanner = new Scanner(new File("C:/Users/carlu/eclipse-workspace/Natal_Participa/src/BDProjeto.txt"));
+			Scanner scanner = new Scanner(new File("C:/Users/*****/eclipse-workspace/Natal_Participa/src/BDProjeto.txt"));
 			while(scanner.hasNextLine()) {
 				input = scanner.nextLine();
 				sb.append(input + "\r\n");
