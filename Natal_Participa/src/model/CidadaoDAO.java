@@ -13,7 +13,7 @@ public class CidadaoDAO {
 	
 	private CidadaoDAO() {
 		Cidadaos = new ArrayList<Cidadao>();
-		File bancoDadosCidadao = new File("C:/Users/carlu/eclipse-workspace/Natal_Participa/src/BDCidadao.txt");
+		File bancoDadosCidadao = new File("C:/Users/*****/eclipse-workspace/Natal_Participa/src/BDCidadao.txt");
 		String input = "";
 		String[] auth;
 		try {
